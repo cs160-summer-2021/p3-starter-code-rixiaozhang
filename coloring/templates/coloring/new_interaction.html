@@ -62,19 +62,27 @@
 			function myCustomInteraction() {
 				var tool = new paper.Tool();
 				
+				document.getElementById("eraser_button").onclick = function(event){
+					tool.onMouseDown = function (event) {
+				    	var hit = mandala.item.hitTest(event.point, { tolerance: 10, fill: true });
+				    	if (hit) {
+				        	hit.item.fillColor = "#f1f1f1";
+							commands.push(hit);
+						}
+					}
+				}
+
 				document.getElementById("undo_button").onclick = function(){
   					const lastCommand = commands.pop();
 					lastCommand.item.fillColor = "#f1f1f1";
 				}
 
+
 				tool.onMouseDown = function (event) {
 				    var hit = mandala.item.hitTest(event.point, { tolerance: 10, fill: true });
 				    if (hit) {
-				    		// Color pallette keeps track of the full history of colors, though we
-				    		// only color in with the most-recent color.
 				        hit.item.fillColor = cp.history[cp.history.length - 1];
 						commands.push(hit);
-						console.log(hit);
 					}
 				}
 
@@ -126,7 +134,6 @@
 				    } else {
 				    	myGradientInteraction();
 				    }
-
 				});
 			}
 
@@ -140,6 +147,8 @@
 	<canvas id="myCanvas" width="750px" height="750px"></canvas>
 	<div id="color-palette"></div>
 	<button id="undo_button">undo</button>
+	<button id="eraser_button">eraser</button>
+
 
 
 </body>
