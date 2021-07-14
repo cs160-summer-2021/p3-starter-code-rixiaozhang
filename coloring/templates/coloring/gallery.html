@@ -1,0 +1,208 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  	<title>P3 Coloring</title>
+
+	<script type="text/javascript" src="{% static 'coloring/vendors/jquery/jquery-3.3.1.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'coloring/vendors/paper/paper-full.min.js' %}"></script>
+
+	<style type="text/css">
+	.iphone_11_pro{
+        position: relative;
+        width: 375px;
+        height: 812px;
+        background: #f7f7fa; 
+        margin: auto;
+    }
+
+    #home_button{
+        position: absolute;
+        width: 51px;
+        height: 55px;
+        left: 12px;
+        top: 22px;
+    } 
+    
+    #my_book{
+        position: absolute;
+        height: 18px;
+        left: 120px;
+        top: 41px;
+
+        font-family: Noto Sans TC;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 30px;
+        line-height: 18px;
+        text-align: center;
+        letter-spacing: 0.01em;
+        color: #000000;
+    }
+
+
+    #recent_text{
+        position: absolute;
+        width: 80px;
+        height: 18px;
+        right: 280px;
+        top: 70px;
+
+        font-family: Noto Sans SC;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 20px;
+        line-height: 18px;
+        text-align: center;
+        color: #686262;
+    }
+
+    #April_2021{
+        position: absolute;
+        width: 108px;
+        height: 18px;
+        right: 280px;
+        top: 320px;
+        font-family: Noto Sans SC;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 20px;
+        line-height: 18px;
+        text-align: center;
+        color: #686262;
+    }
+
+    #May_2021{
+        position: absolute;
+        width: 103px;
+        height: 18px;
+        right: 280px;
+        top: 570px;
+
+        font-family: Noto Sans SC;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 20px;
+        line-height: 18px;
+        text-align: center;
+        color: #686262;        
+    }
+
+    #recent_img{
+        position: absolute;
+        width: 188px;
+        height: 188px;
+        top: 120px;
+        right: 85px;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+        display: block;
+        margin: 0 auto;
+    }
+
+    #frame_12{  
+        position: absolute;
+        width: 322px;
+        height: 160px;
+        left: 34px;
+        top: 400px;
+        overflow-x: scroll;
+    }
+
+    #one{
+        position: absolute;
+        width: 141px;
+        height: 129px;
+        left: 0px;
+        top: 0px;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    }
+
+    #two{
+        position: absolute;
+        width: 143px;
+        height: 129px;
+        left: 179px;
+        top: 0px;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    }
+    
+    #three{
+        position: absolute;
+        width: 143px;
+        height: 129px;
+        left: 365px;
+        top: 0px;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    }
+
+    #frame_13{
+        position: absolute;
+        width: 322px;
+        height: 160px;
+        left: 34px;
+        top: 651px;
+        overflow-x: scroll;
+    }
+
+    #four{
+        position: absolute;
+        width: 137px;
+        height: 125px;
+        left: 0px;
+        top: 0px;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    }
+
+    #five {
+        position: absolute;
+        width: 143px;
+        height: 125px;
+        left: 179px;
+        top: 0px;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    }
+
+    #six{
+        position: absolute;
+        width: 144px;
+        height: 129px;
+        left: 365px;
+        top: 0px;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    }
+	</style>
+
+</head>
+
+
+
+
+<body>
+    <div class = "iphone_11_pro">
+        <img id = "home_button" src=https://s3-alpha-sig.figma.com/img/91ab/41f0/fef584949a60d5216513c2192326c837?Expires=1627257600&Signature=KQeaWzFK-3lClF5ALPF7SilAHcQNU6qUrVJSq48gkaU1oyVuSyzbKeKhtHe~lkjlr70HLYs6kdm6PzH7JQ5jA~Nxig0Jp1xE5NWlhakZT67MI7kD-CNAxse2ewcgNT7WUGvvlxjvwzP3tlEqQXtSIMFwt9vsNumKsJ3Kodyh~f4niEVy7yt5OAo97ODZ0b~S1XMXv5p3TbPE1z5wfaKQ~XwR~PcDlJW8D8nAqk1Ow6cu-jA9Vthv-JFY7VPv0F4tNZJ5h2ScjRa0zpXlxFxCUoTHlBPlKJGTd2udiKZo72A5gh1m0FH7blZB0dB6IJl3ndPpYdE6OuaDCp3yCS4E6A__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA>
+        <span id = "my_book">My Book</span>
+        <p id ="recent_text">Recent> </p>
+
+        <img id = "recent_img" src= https://s3-alpha-sig.figma.com/img/9457/192e/b16dc10a2b429aeae3f45b339b5a3e2e?Expires=1627257600&Signature=c3nD8BCRyhQGFY96K2fhbyjCN-tY4hsBjJhYPDr-LJhj~UOOpqhwLr7ZDgoTaRUylJdrxR6due3p2C7JMLCDFJqqmAM4vt8kxZ-mcb9PPsn2BK8k3Tr~L1Qp~aikaLMmEsx8dN~y2Vo8cCoYSvZ0FnxgaZSnudlSs3pJxLcYLh~OdKTWaFMsIFMjf1hj4QK2rPYv5O4eoRSluYQLXp41gexQoL~HhL9IcJZO21Pb8D8oYmQa5~ALlshOjiIo8oCjDjf84JABKVDcHTJeSLTTW3gq6BjA2uENTi0mV5o2ybfIVcee~awRqKSt9rmtD-SGf0W85JG2l1gU8SQo0L~DMw__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA>
+        <p id ="April_2021">April 2021> </p>
+        <p id ="May_2021">May 2021> </p>
+
+        <div id = "frame_12"> 
+            <img id = "one" src = https://s3-alpha-sig.figma.com/img/18de/01a1/22a1aeb92dec0dd6fa75263abbf2f307?Expires=1627257600&Signature=OQ5OPrGpMzgL5t8HB19O6w4W1TZKlg0C9oQx6v2nC9fOTprxGzVTf2WrVCjg0nvSCsTMvV5RcDPyvr41qLeCjw-Iesu0Nar09sWmDd0rtNkqTZYHOAbSr32XE-PuZ3dKtY7x7bFIxKU9O9BPy4T3tGVDl7EA6SXkGoX5aJhLoJjqKTdteR77G0frDj4NbWIT7H-yzTK5Kf1xQ8Dbb-AVBnIPtJl9QObt0NHILCiWUsyXHl~QZX4JIV7B236QM0r~u59we4zKuqZ7qx8MYdMdB91ePBHWe8nfNZHQBHGdmP4KNWbsbHPWI5a2wBzxF5bsEVowUTzI601wbIE-fDrc5w__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA>
+            <img id = "two" src = https://s3-alpha-sig.figma.com/img/b1de/0b9b/5a0d7b4efe6310ecbf30c4f98b94f289?Expires=1627257600&Signature=Jg7kLwxpxF5W7xQ6J-bmUjNTiWFBgwo1UTtR84Bj~~KDOtGfaFQZwTfw3P-IZZv3ofpRU-ydRfxY4D5PKWndpvjn5doVlDD-xLbBwhaOikRvCjhUvBHaFV-CBKGS37V-ZZVD5v1Day1a-seBwh5F8PRY-uulkw844q3uYBBRJNPt0zkmlE9YsXFxAhgCltjYL3d9jETYrU4H6iuw-aRztd2BN4-bUmZ4-naaLkZ7lYXZSCSfz5kJ807LUBX2gcMeuVOyrYLSC0mh31~TDbrmYWYWjai9GFD~X4k3~OwGYAmC61O4Gre0LtyheGh9EqHRPG~qOLkxojcAIAQozcCivQ__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA>
+            <img id = "three" src = https://s3-alpha-sig.figma.com/img/f900/eb07/cc0284b75d1178ac05ccca729c4e473b?Expires=1627257600&Signature=Or-08wXriV67AclypajXf48PFvLrsaw0tlvzF548cZAnrvi7QcoUVhar~ETjTFDI~VPmDYIWORHt5zcS3FoYyR5bAwiy7wfgbwVp07NQ43Ph0vAzNcYdiqzUNgl1ofKLUFqw1RVbAP1Hibssaf71TgpnY64tlKvbwJIkLCuOx0ohO~0oBjjLsRGZrdcrpYhaTMFYGvmso0WXztOa3lUwcYzQc9HY7m91vectB~84iQAVf0l-Mm030-IwkWmhxdQ8x4AlPQs1PA1aKhqvoG2svfyqJisazC24ysJX2-cH3l9ej8Tclyom2vuEtJczIS96qQZdE~XMiDpUla4eaOxGUQ__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA>
+        </div> 
+
+        <div id = "frame_13">
+            <img id = "four" src = https://s3-alpha-sig.figma.com/img/d809/efe6/44a091e97490b97ecb9b61ebac5cd3b6?Expires=1627257600&Signature=XqiuOOEmceC65RepSJpTY8Dj0HiwC6vryLi8TXQoXW3U1b-ithoxVXZIDXY-ANk5VwAIvAc742iluPMgQ18fvqQnODjl79FWoSIUGFGDvnlR1HPlMFqe~OEDaYlMjNYzHTtQSaGxTVMUBC0xbAKZQELk91x6U1XGtmM7B3JU1ivic11k3bWdyB3thsoZkOrZoyNBKbHyZtnpDdS36wK3GCY36TH6wEvAobEYBVMPihfBFpFjywrOofKwJtocwKuiSdyXdhebqB166XBWP8CRqXafRL7GKKkxwxpoRb-Ug~5stoOZMYqblvrPcGK90jIyD1Jdv2nRKPlZR6jTwRzOVw__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA>
+            <img id = "five" src = https://s3-alpha-sig.figma.com/img/b1a1/39da/55ba484aa48e8d2ea2f4c20f32b0e3d5?Expires=1627257600&Signature=gb2bpAmTLQusaY7th~SpD-x05jma9ufXMorJGh-vpLOZax9vrrX7glL50nPo2XLUPdPqhkwGt3AUMkxTRQTIQo3wbOTrFJR3DwJGahQ7geyn8bkKrodc3izBnJgTLwMU34UmTbKg6hfFgdkuXh9dEZQvQj0WiJvGxDJ2p1Bct26bpEZUXuMl5AXVuwxZr3sraRGcxIdz1UOILCZlEg7GeeOnKXVuClnOiSjY5-dsed~Gtjw1LilKmFGPM8px4DjbANx6mCR31oGigilXf601o2KqvrgNSSkfSq~8ceVrBh-ifgOugJzx8xPwvFk-l9CAHhC0k1Z1ylOq6z8eGGxZIg__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA>
+            <img id = "six" src = https://s3-alpha-sig.figma.com/img/2b05/79fb/9a4487ef5d0d243ed932177ca2081d79?Expires=1627257600&Signature=QN8Q2ikuEudiHg7tk7nZmcFL7AceB6ew~DmR1TC6mf3qv5Kbd4T9EvE0xxHIFMVi9xzSh3Esfq~AzRLRzfpwnE5nB1oZEPvdFkiDnhfdCLNSMF3iymitl8iB~7oOG5i6iqLcPQi7aYj8maNaaiAwEPfxRji3YUkfc4kpp5xyQ51iX0imCh9PYFFlAkMmZk3A2f~Im-a8xg~PQW03BTHkVfm5p9TcFjab1QNcofPkBbfAMxyEMnreF5YX715xWkE1t1lpypDY2ndPdDtDwD0JrDReUL5Wm5JQxyvtwlrS9WYsC1Jn8axWySmBgp17FL432s35Bt~O1x0mLk7X2MDZ8w__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA>
+        </div>
+
+    
+    </div>
+
+</body>
+</html>
