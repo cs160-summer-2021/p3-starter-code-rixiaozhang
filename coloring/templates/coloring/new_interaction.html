@@ -55,29 +55,16 @@
 				$container: $('#color-palette')
 			}
 
+			// commond array 
+			const commands = [];
+
+
 			function myCustomInteraction() {
 				var tool = new paper.Tool();
-				const commands = []
-				const input = document.querySelector('input')
-
-				// function saveCommand(e) {
- 				// 	commands.push({
-    			// 	action: { type: 'add', key: e.key, index: input.selectionStart },
-    			// 	inverse: { type: 'remove', index: input.selectionStart }
-  				// 	})
-				// }
-
+				
 				document.getElementById("undo_button").onclick = function(){
-					let value = input.value.split('')
-  					const lastCommand = commands.pop()
- 
-  					if (!lastCommand) return
-  					switch (lastCommand.inverse.type) {
-   						case 'remove':
-      						value.splice(lastCommand.inverse.index, 1)
-      						break;      
-  					}
-  					input.value = value.join('')
+  					const lastCommand = commands.pop();
+					lastCommand.item.fillColor = "#f1f1f1";
 				}
 
 				tool.onMouseDown = function (event) {
@@ -86,12 +73,9 @@
 				    		// Color pallette keeps track of the full history of colors, though we
 				    		// only color in with the most-recent color.
 				        hit.item.fillColor = cp.history[cp.history.length - 1];
-				    }
-
-					commands.push({
-    				action: { type: 'add', key: event.key, index: input.selectionStart },
-    				inverse: { type: 'remove', index: input.selectionStart }
-  					})
+						commands.push(hit);
+						console.log(hit);
+					}
 				}
 
 				tool.onMouseDrag = function(event) {
@@ -156,6 +140,7 @@
 	<canvas id="myCanvas" width="750px" height="750px"></canvas>
 	<div id="color-palette"></div>
 	<button id="undo_button">undo</button>
+
 
 </body>
 </html>
