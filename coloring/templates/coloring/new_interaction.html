@@ -8,6 +8,7 @@
 
 	<script type="text/javascript" src="{% static 'coloring/vendors/jquery/jquery-3.3.1.min.js' %}"></script>
 	<script type="text/javascript" src="{% static 'coloring/vendors/paper/paper-full.min.js' %}"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/classic.min.css"/> <!-- 'classic' theme -->
 
 	<style type="text/css">
 		#color-palette {
@@ -33,6 +34,7 @@
 		    padding-right: 0;
 		    margin-left: auto;
 		    margin-right: auto;
+			margin-top: 200px;
 		    display: block;
 		}
 	</style>
@@ -49,7 +51,7 @@
 			};
 
 			// color palette
-			var cp = {
+			window.cp = {
 				history: ["#000000"], // black selected by default
 				options: [],
 				$container: $('#color-palette')
@@ -83,13 +85,14 @@
 					const timer = document.querySelector("#timer");
 					const display = document.getElementById("timer");
     					clearInterval(interval);
-    					count = 60;
+    					count = 59;
 
     					interval = setInterval(() => {
       						timer.innerText = count--;
 							console.log(count);
 							
       						if (count < 0) {
+								alert('It is time!');
         						clearInterval(interval);
       						}
 							if (count < 10){
@@ -165,6 +168,7 @@
 			init(true);
 		}
 	</script>
+
 </head>
 <body>
 
@@ -173,7 +177,10 @@
 	<button id="undo_button">Undo</button>
 	<button id="eraser_button">Eraser</button>
 	<button id="timer">01:00</button>
+	<div class="color-picker"> </div>
 
+	<script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"></script>
+	<script src="../../static/coloring/vendors/picker/main.js"></script>
 
 
 </body>
