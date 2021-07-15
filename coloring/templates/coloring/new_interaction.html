@@ -77,6 +77,30 @@
 					lastCommand.item.fillColor = "#f1f1f1";
 				}
 
+				document.getElementById("timer").onclick = function() {
+					let count;
+					let interval;
+					const timer = document.querySelector("#timer");
+					const display = document.getElementById("timer");
+    					clearInterval(interval);
+    					count = 60;
+
+    					interval = setInterval(() => {
+      						timer.innerText = count--;
+							console.log(count);
+							
+      						if (count < 0) {
+        						clearInterval(interval);
+      						}
+							if (count < 10){
+								display.innerHTML = "00:0" + timer.innerText;
+							}else {
+								display.innerHTML = "00:" + timer.innerText;
+							}
+    					}, 1000);
+
+				};
+
 
 				tool.onMouseDown = function (event) {
 				    var hit = mandala.item.hitTest(event.point, { tolerance: 10, fill: true });
@@ -146,8 +170,9 @@
 
 	<canvas id="myCanvas" width="750px" height="750px"></canvas>
 	<div id="color-palette"></div>
-	<button id="undo_button">undo</button>
-	<button id="eraser_button">eraser</button>
+	<button id="undo_button">Undo</button>
+	<button id="eraser_button">Eraser</button>
+	<button id="timer">01:00</button>
 
 
 
