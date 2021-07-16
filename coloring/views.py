@@ -20,7 +20,3 @@ def triangles(request):
 
 def mandala_simple(request):
     return render(request, 'coloring/mandala_simple.html')
-    
-    
-def Mandala_one(request):
-    return render(request, 'coloring/Mandala_one.html')

@@ -8,23 +8,21 @@
 
 	<script type="text/javascript" src="{% static 'coloring/vendors/jquery/jquery-3.3.1.min.js' %}"></script>
 	<script type="text/javascript" src="{% static 'coloring/vendors/paper/paper-full.min.js' %}"></script>
-	<script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"></script>
-
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/classic.min.css"/> <!-- 'classic' theme -->
 
 	<style type="text/css">
 		#color-palette {
-			width: 150px;
+			width: 300px;
 			background-color: #f1f1f1;
 			display: flex;
 			flex-wrap: wrap;
-			top: 300px;
-			right: 50px;
+			position: absolute;
+			top: 0;
 		}
 
 		.swatch {
-			width: 44px;
-			height: 44px;
+			width: 24px;
+			height: 24px;
 			-moz-border-radius: 12px;
 			-webkit-border-radius: 12px;
 			border-radius: 12px;
@@ -36,31 +34,9 @@
 		    padding-right: 0;
 		    margin-left: auto;
 		    margin-right: auto;
-			margin-top: 100px;
+			margin-top: 200px;
 		    display: block;
 		}
-
-		.basic_functions{
-			width: 300px;
-			height: 80px;
-			top: 0px;
-			right: 0px;
-			background-color: #f31010;
-			display: flex;
-			flex-wrap: wrap;
-			position: absolute;
-		}
-
-		.color-container{
-			width: 150px;
-			top: 300px;
-			right: 10px;
-			display: flex;
-			flex-wrap: wrap;
-			position: absolute;
-			background-color: #f01414;
-		}
-		
 	</style>
 
 	<script type="text/javascript" canvas="canvas">
@@ -68,10 +44,10 @@
 			var canvas = document.getElementById('myCanvas');
 
 			// coloring page
-			var mandala = {
+			var Mandala_one = {
 				item: null,
 				lastClicked: null,
-				filePath: '/static/coloring/images/mandala-freepik.svg'
+				filePath: '/static/coloring/images/Mandala-one.svg'
 			};
 
 			// color palette
@@ -90,7 +66,7 @@
 				
 				document.getElementById("eraser_button").onclick = function(event){
 					tool.onMouseDown = function (event) {
-				    	var hit = mandala.item.hitTest(event.point, { tolerance: 10, fill: true });
+				    	var hit = Mandala_one.item.hitTest(event.point, { tolerance: 10, fill: true });
 				    	if (hit) {
 				        	hit.item.fillColor = "#f1f1f1";
 							commands.push(hit);
@@ -104,7 +80,7 @@
 				}
 
 				document.getElementById("reset").onclick = function(){
-					location.href = "../new_interaction/";
+					location.href = "../Mandala_one/";
 				}
 				document.getElementById("timer").onclick = function() {
 					let count;
@@ -131,7 +107,7 @@
 
 
 				tool.onMouseDown = function (event) {
-				    var hit = mandala.item.hitTest(event.point, { tolerance: 10, fill: true });
+				    var hit = Mandala_one.item.hitTest(event.point, { tolerance: 10, fill: true });
 				    if (hit) {
 				        hit.item.fillColor = cp.history[cp.history.length - 1];
 						commands.push(hit);
@@ -139,7 +115,7 @@
 				}
 
 				tool.onMouseDrag = function(event) {
-					var drag = mandala.item.hitTest(event.point, { tolerance: 10, fill: true });
+					var drag = Mandala_one.item.hitTest(event.point, { tolerance: 10, fill: true });
 					if (drag) {
 				        drag.item.fillColor = cp.history[cp.history.length - 1];
 				    }
@@ -151,7 +127,8 @@
 
 				// create a swatch for each color
 				for (var i = colors.length - 1; i >= 0; i--) {
-					var $swatch = $("<div>").css("background-color", colors[i]).addClass("swatch");
+					var $swatch = $("<div>").css("background-color", colors[i])
+									   .addClass("swatch");
 					$swatch.click(function(){
 						// add color to the color palette history
 					  	cp.history.push($(this).css("background-color"));
@@ -176,9 +153,9 @@
 				paper.setup(canvas);
 				getColorsCreatePalette();
 
-				paper.project.importSVG(mandala.filePath, function(item) {
-					mandala.item = item._children["design-freepik"];
-				    paper.project.insertLayer(0,mandala.item);
+				paper.project.importSVG(Mandala_one.filePath, function(item) {
+					Mandala_one.item = item._children["design-freepik"];
+				    paper.project.insertLayer(0,Mandala_one.item);
 
 				    if (custom) {
 				    	myCustomInteraction();
@@ -188,35 +165,25 @@
 				});
 			}
 
-			// Set up the mandala interactivity.
+			// Set up the Mandala_one interactivity.
 			init(true);
 		}
 	</script>
 
 </head>
-
 <body>
-	
-	<div class="basic_functions">
-		<button id="undo_button">Undo</button>
-		<button id="eraser_button">Eraser</button>
-		<button id="timer">01:00</button>
-		<button id="reset">reset</button>
-	</div>
 
-		<canvas id="myCanvas" width="750px" height="750px"></canvas>
+	<canvas id="myCanvas" width="750px" height="750px"></canvas>
+	<div id="color-palette"></div>
+	<button id="undo_button">Undo</button>
+	<button id="eraser_button">Eraser</button>
+	<button id="timer">01:00</button>
+	<button id="reset">reset</button>
+	<div class="color-picker"> </div>
 
+	<script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"></script>
+	<script src="../../static/coloring/vendors/picker/pick.js"></script>
 
-		<div class="color-container">
-			<div id="color-palette">
-				
-			</div>
-			<div class="color-picker "></div>
-		</div>
-	</div>
-
-	
-	<script type="text/javascript" src="../../static/coloring/vendors/picker/pick.js"></script>
 
 </body>
 </html>

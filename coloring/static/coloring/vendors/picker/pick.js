@@ -1,7 +1,6 @@
-// Simple example, see optional options for more configuration.
 const pickr = Pickr.create({
     el: '.color-picker',
-    theme: 'classic', // or 'monolith', or 'nano'
+    theme: 'classic', 
 
     swatches: [
         'rgba(244, 67, 54, 1)',
@@ -43,5 +42,12 @@ const pickr = Pickr.create({
 
 
 pickr.on('save', (color, instance) => {
-   cp.history.push(color.toHEXA().toString());
+    cp.history.push(color.toHEXA().toString());
+    cp.options.push(color.toHEXA().toString());
+
+    var $swatch = $("<div>").css("background-color", color.toHEXA().toString()).addClass("swatch");
+    $swatch.click(function(){
+        cp.history.push($(this).css("background-color"));
+    });
+    cp.$container.append($swatch);
 });

@@ -6,7 +6,6 @@ urlpatterns = [
     path('demo/', views.demo, name='demo'),
     path('gallery/', views.gallery, name='gallery'),
     path('triangles/', views.triangles, name="triangles"),
-    path('Mandala_one/', views.Mandala_one, name="Mandala_one"),
     path('mandala_simple/', views.mandala_simple, name="mandala_simple"),
     path('new_interaction/', views.new_interaction, name='new_interaction')
 ]
