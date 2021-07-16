@@ -32,9 +32,9 @@
 		#myCanvas {
 			padding-left: 0;
 		    padding-right: 0;
+			margin-top: 100px;
 		    margin-left: auto;
 		    margin-right: auto;
-			margin-top: 200px;
 		    display: block;
 		}
 	</style>
@@ -44,10 +44,10 @@
 			var canvas = document.getElementById('myCanvas');
 
 			// coloring page
-			var mandala = {
+			var triangles = {
 				item: null,
 				lastClicked: null,
-				filePath: '/static/coloring/images/mandala-freepik.svg'
+				filePath: '/static/coloring/images/triangles.svg'
 			};
 
 			// color palette
@@ -60,13 +60,12 @@
 			// commond array 
 			const commands = [];
 
-
 			function myCustomInteraction() {
 				var tool = new paper.Tool();
 				
 				document.getElementById("eraser_button").onclick = function(event){
 					tool.onMouseDown = function (event) {
-				    	var hit = mandala.item.hitTest(event.point, { tolerance: 10, fill: true });
+				    	var hit = triangles.item.hitTest(event.point, { tolerance: 10, fill: true });
 				    	if (hit) {
 				        	hit.item.fillColor = "#f1f1f1";
 							commands.push(hit);
@@ -80,8 +79,9 @@
 				}
 
 				document.getElementById("reset").onclick = function(){
-					location.href = "../new_interaction/";
+					location.href = "../triangles/";
 				}
+
 				document.getElementById("timer").onclick = function() {
 					let count;
 					let interval;
@@ -107,7 +107,7 @@
 
 
 				tool.onMouseDown = function (event) {
-				    var hit = mandala.item.hitTest(event.point, { tolerance: 10, fill: true });
+				    var hit = triangles.item.hitTest(event.point, { tolerance: 10, fill: true });
 				    if (hit) {
 				        hit.item.fillColor = cp.history[cp.history.length - 1];
 						commands.push(hit);
@@ -115,7 +115,7 @@
 				}
 
 				tool.onMouseDrag = function(event) {
-					var drag = mandala.item.hitTest(event.point, { tolerance: 10, fill: true });
+					var drag = triangles.item.hitTest(event.point, { tolerance: 10, fill: true });
 					if (drag) {
 				        drag.item.fillColor = cp.history[cp.history.length - 1];
 				    }
@@ -153,9 +153,9 @@
 				paper.setup(canvas);
 				getColorsCreatePalette();
 
-				paper.project.importSVG(mandala.filePath, function(item) {
-					mandala.item = item._children["design-freepik"];
-				    paper.project.insertLayer(0,mandala.item);
+				paper.project.importSVG(triangles.filePath, function(item) {
+					triangles.item = item._children["design-freepik"];
+				    paper.project.insertLayer(0,triangles.item);
 
 				    if (custom) {
 				    	myCustomInteraction();
@@ -165,7 +165,7 @@
 				});
 			}
 
-			// Set up the mandala interactivity.
+			// Set up the triangles interactivity.
 			init(true);
 		}
 	</script>
@@ -173,7 +173,7 @@
 </head>
 <body>
 
-	<canvas id="myCanvas" width="750px" height="750px"></canvas>
+	<canvas id="myCanvas" width="1300px" height="1300px"></canvas>
 	<div id="color-palette"></div>
 	<button id="undo_button">Undo</button>
 	<button id="eraser_button">Eraser</button>

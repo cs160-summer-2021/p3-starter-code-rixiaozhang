@@ -44,10 +44,10 @@
 			var canvas = document.getElementById('myCanvas');
 
 			// coloring page
-			var mandala = {
+			var mandala_simple = {
 				item: null,
 				lastClicked: null,
-				filePath: '/static/coloring/images/mandala-freepik.svg'
+				filePath: '/static/coloring/images/mandala-freepik-simple.svg'
 			};
 
 			// color palette
@@ -66,7 +66,7 @@
 				
 				document.getElementById("eraser_button").onclick = function(event){
 					tool.onMouseDown = function (event) {
-				    	var hit = mandala.item.hitTest(event.point, { tolerance: 10, fill: true });
+				    	var hit = mandala_simple.item.hitTest(event.point, { tolerance: 10, fill: true });
 				    	if (hit) {
 				        	hit.item.fillColor = "#f1f1f1";
 							commands.push(hit);
@@ -80,7 +80,7 @@
 				}
 
 				document.getElementById("reset").onclick = function(){
-					location.href = "../new_interaction/";
+					location.href = "../mandala_simple/";
 				}
 				document.getElementById("timer").onclick = function() {
 					let count;
@@ -107,7 +107,7 @@
 
 
 				tool.onMouseDown = function (event) {
-				    var hit = mandala.item.hitTest(event.point, { tolerance: 10, fill: true });
+				    var hit = mandala_simple.item.hitTest(event.point, { tolerance: 10, fill: true });
 				    if (hit) {
 				        hit.item.fillColor = cp.history[cp.history.length - 1];
 						commands.push(hit);
@@ -115,7 +115,7 @@
 				}
 
 				tool.onMouseDrag = function(event) {
-					var drag = mandala.item.hitTest(event.point, { tolerance: 10, fill: true });
+					var drag = mandala_simple.item.hitTest(event.point, { tolerance: 10, fill: true });
 					if (drag) {
 				        drag.item.fillColor = cp.history[cp.history.length - 1];
 				    }
@@ -153,9 +153,9 @@
 				paper.setup(canvas);
 				getColorsCreatePalette();
 
-				paper.project.importSVG(mandala.filePath, function(item) {
-					mandala.item = item._children["design-freepik"];
-				    paper.project.insertLayer(0,mandala.item);
+				paper.project.importSVG(mandala_simple.filePath, function(item) {
+					mandala_simple.item = item._children["design-freepik"];
+				    paper.project.insertLayer(0,mandala_simple.item);
 
 				    if (custom) {
 				    	myCustomInteraction();
@@ -165,7 +165,7 @@
 				});
 			}
 
-			// Set up the mandala interactivity.
+			// Set up the mandala_simple interactivity.
 			init(true);
 		}
 	</script>
