@@ -1,0 +1,257 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  	<title>P3 Coloring</title>
+
+	<script type="text/javascript" src="{% static 'coloring/vendors/jquery/jquery-3.3.1.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'coloring/vendors/paper/paper-full.min.js' %}"></script>
+
+	<style type="text/css">
+	.iphone_11_pro{
+        position: relative;
+        width: 375px;
+        height: 812px;
+        top: 200px;
+        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-n7PlQNIzjhXffj3KkR6tXoBGrWuf_D0WSA&usqp=CAU");
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin: auto;
+    }
+
+    #home_button{
+        position: absolute;
+        width: 51px;
+        height: 55px;
+        left: 12px;
+        top: 22px;
+    }
+
+    #my_book{
+        position: absolute;
+        height: 50px;
+        left: 100px;
+        top: 60px;
+
+        font-family: cursive;
+        font-style: normal;
+        font-weight:bold;
+        font-size: 50px;
+        line-height: 18px;
+        text-align: center;
+        letter-spacing: 0.01em;
+        color: #000000;
+    }
+    #my_book1{
+        position: absolute;
+        height: 50px;
+        left: 170px;
+        top: 130px;
+
+        font-family: cursive;
+        font-style: normal;
+        font-weight:bold;
+        font-size: 50px;
+        line-height: 18px;
+        text-align: center;
+        letter-spacing: 0.01em;
+        color: #000000;
+    }
+    #my_book2{
+        position: absolute;
+        height: 50px;
+        left: 100px;
+        top: 200px;
+
+        font-family: cursive;
+        font-style: normal;
+        font-weight:bold;
+        font-size: 50px;
+        line-height: 18px;
+        text-align: center;
+        letter-spacing: 0.01em;
+        color: #000000;
+    }
+
+
+    #recent_text{
+        position: absolute;
+        width: 80px;
+        height: 18px;
+        right: 280px;
+        top: 70px;
+
+        font-family: Noto Sans SC;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 20px;
+        line-height: 18px;
+        text-align: center;
+        color: #686262;
+    }
+
+    #April_2021{
+        position: absolute;
+        width: 250px;
+        height: 18px;
+        right: 175px;
+        top: 320px;
+        font-family: Noto Sans SC;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 20px;
+        line-height: 18px;
+        text-align: center;
+        color: #686262;
+    }
+
+    #May_2021{
+        position: absolute;
+        width: 250px;
+        height: 200px;
+        right: 125px;
+        top: 560px;
+        font-family: Noto Sans SC;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 20px;
+        text-align: center;
+    }
+    #May_2022{
+        position: absolute;
+        width: 250px;
+        height: 200px;
+        right: 0px;
+        top: 560px;
+        font-family: Noto Sans SC;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 20px;
+        text-align: center;
+    }
+
+    #recent_img{
+        position: absolute;
+        width: 188px;
+        height: 188px;
+        top: 120px;
+        right: 85px;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+        display: block;
+        margin: 0 auto;
+    }
+
+    #frame_12{
+        position: absolute;
+        width: 322px;
+        height: 160px;
+        left: 34px;
+        top: 380px;
+        overflow-x: scroll;
+    }
+
+    #one{
+        position: absolute;
+        width: 141px;
+        height: 129px;
+        left: 0px;
+        top: 0px;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    }
+
+    #two{
+        position: absolute;
+        width: 143px;
+        height: 129px;
+        left: 179px;
+        top: 0px;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    }
+
+    #three{
+        position: absolute;
+        width: 143px;
+        height: 129px;
+        left: 365px;
+        top: 0px;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    }
+
+    #frame_13{
+        position: absolute;
+        width: 322px;
+        height: 160px;
+        left: 34px;
+        top: 620px;
+        overflow-x: scroll;
+    }
+
+    #four{
+        position: absolute;
+        width: 137px;
+        height: 125px;
+        left: 0px;
+        top: 0px;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    }
+
+    #five {
+        position: absolute;
+        width: 143px;
+        height: 125px;
+        left: 179px;
+        top: 0px;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    }
+
+    #six{
+        position: absolute;
+        width: 144px;
+        height: 129px;
+        left: 365px;
+        top: 0px;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    }
+    .button1 {
+  background-color: #FFB1AB;
+  color: black;
+  border: 1px ;
+  font-size: 30px;
+}
+
+.button1:hover {
+  background-color: #F97645;
+  color: white;
+}
+	</style>
+
+</head>
+
+
+
+
+<body>
+    <div class = "iphone_11_pro">
+        <img id = "home_button" src=https://sg-res.9appsinstall.com/sg/res/jpg/14/1a/5975e24788e8f5f660509cd25e99-0sp.jpg?x-oss-process=style/mq200>
+        <span id = "my_book">Welcome</span>
+        <span id = "my_book1">to</span>
+        <span id = "my_book2">Colorelax</span>
+        <form id = "May_2021" action="http://localhost:8000/coloring/start/">
+            <button type="submit" class= "button button1" style="height:50px;width:100px"/>
+            Start
+          </button>
+        </form>
+        <form id = "May_2022" action="http://localhost:8000/coloring/gallery/">
+            <button type="submit" class= "button button1" style="height:50px;width:100px"/>
+            Gallery
+          </button>
+        </form>
+
+
+
+    </div>
+
+</body>
+</html>

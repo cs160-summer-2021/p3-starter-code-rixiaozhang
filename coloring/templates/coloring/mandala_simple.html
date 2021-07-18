@@ -70,7 +70,7 @@
 			width: 800px;
 			height: 80px;
 			top: 0px;
-			left: 0px;
+			left: 450px;
 			display: flex;
 			flex-wrap: wrap;
 			position: absolute;
@@ -88,8 +88,37 @@
 		.btn:hover {
 			background-color: RoyalBlue;
 		}
+		#home_button{
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        right: 2px;
+        top: 2px;
+    }
+		#home_button1{
+        position: absolute;
+        width: 51px;
+        height: 55px;
+        left: 0px;
+        top: 0px;
+    }
+		#home_button2{
+        position: absolute;
+        width: 51px;
+        height: 55px;
+        left: 50px;
+        top: 30px;
+				font-family: cursive;
+				font-style: normal;
+				font-weight:bold;
+				font-size: 12px;
+				line-height: 18px;
+				text-align: center;
+				letter-spacing: 0.01em;
+				color: #BDDCDC;
+    }
 
-		
+
 	</style>
 
 	<script type="text/javascript" canvas="canvas">
@@ -110,13 +139,13 @@
 				$container: $('#color-palette')
 			}
 
-			// commond array 
+			// commond array
 			const commands = [];
 
 
 			function myCustomInteraction() {
 				var tool = new paper.Tool();
-				
+
 				document.getElementById("eraser_button").onclick = function(event){
 					tool.onMouseDown = function (event) {
 				    	var hit = mandala_simple.item.hitTest(event.point, { tolerance: 10, fill: true });
@@ -149,7 +178,7 @@
     					count = 59;
 
     					interval = setInterval(() => {
-      						timer.innerText = count--;							
+      						timer.innerText = count--;
       						if (count < 0) {
 								alert('It is time!');
         						clearInterval(interval);
@@ -177,7 +206,7 @@
 					if (drag) {
 				        drag.item.fillColor = cp.history[cp.history.length - 1];
 				    }
-				}		
+				}
 			}
 
 			// create a color palette with the given colors
@@ -238,26 +267,31 @@
 				var color_container = document.getElementsByClassName('color_container')[0];
 				var	deg = rotated ? 0 : 90;
 
-				color_container.style.webkitTransform = 'rotate('+deg+'deg)'; 
-				color_container.style.mozTransform    = 'rotate('+deg+'deg)'; 
-				color_container.style.msTransform     = 'rotate('+deg+'deg)'; 
-				color_container.style.oTransform      = 'rotate('+deg+'deg)'; 
-				color_container.style.transform       = 'rotate('+deg+'deg)'; 
-				
+				color_container.style.webkitTransform = 'rotate('+deg+'deg)';
+				color_container.style.mozTransform    = 'rotate('+deg+'deg)';
+				color_container.style.msTransform     = 'rotate('+deg+'deg)';
+				color_container.style.oTransform      = 'rotate('+deg+'deg)';
+				color_container.style.transform       = 'rotate('+deg+'deg)';
+
 				rotated = !rotated;
 			}
 
 
 		}
-	
-	
-	
+
+
+
 	</script>
- 
+
 
 </head>
 
 <body>
+	<img id = "home_button1" src=https://sg-res.9appsinstall.com/sg/res/jpg/14/1a/5975e24788e8f5f660509cd25e99-0sp.jpg?x-oss-process=style/mq200>
+		<a href="http://localhost:8000/coloring/mandalas/">
+		<img id = "home_button"  src=https://s3-alpha-sig.figma.com/img/91ab/41f0/fef584949a60d5216513c2192326c837?Expires=1627257600&Signature=KQeaWzFK-3lClF5ALPF7SilAHcQNU6qUrVJSq48gkaU1oyVuSyzbKeKhtHe~lkjlr70HLYs6kdm6PzH7JQ5jA~Nxig0Jp1xE5NWlhakZT67MI7kD-CNAxse2ewcgNT7WUGvvlxjvwzP3tlEqQXtSIMFwt9vsNumKsJ3Kodyh~f4niEVy7yt5OAo97ODZ0b~S1XMXv5p3TbPE1z5wfaKQ~XwR~PcDlJW8D8nAqk1Ow6cu-jA9Vthv-JFY7VPv0F4tNZJ5h2ScjRa0zpXlxFxCUoTHlBPlKJGTd2udiKZo72A5gh1m0FH7blZB0dB6IJl3ndPpYdE6OuaDCp3yCS4E6A__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA>
+	</a>
+	<span id = "home_button2">Colorelax</span>
 
 
 	<div class="basic_functions">
@@ -265,7 +299,7 @@
 		<button id="eraser_button" class ="btn"><i class="fas fa-eraser"></i>  Eraser</button>
 		<button id="timer" class ="btn"><i class="far fa-clock"></i>  Timer</button>
 		<button id="reset" class ="btn"><i class="fas fa-trash-alt"></i>  Trash</button>
-		<button id="share" class = "btn"><i class="fas fa-share-alt-square">  Share</i></button>
+		<button id="share" class = "btn"><i class="fas fa-share-alt-square">  Save&Share</i></button>
 	</div>
 
 		<canvas id="myCanvas" width="750px" height="750px"></canvas>
@@ -280,7 +314,7 @@
 	</div>
 
 
-	
+
 	<script type="text/javascript" src="../../static/coloring/vendors/picker/pick.js"></script>
 
 </body>

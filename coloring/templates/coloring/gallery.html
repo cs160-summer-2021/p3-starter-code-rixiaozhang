@@ -15,7 +15,7 @@
         width: 375px;
         height: 812px;
         top: 200px;
-        background: #f7f7fa; 
+        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrz5QZ016XJYFvs2eVhDresoXheU3Wvy-yNA&usqp=CAU");
         margin: auto;
     }
 
@@ -23,20 +23,41 @@
         position: absolute;
         width: 51px;
         height: 55px;
-        left: 12px;
-        top: 22px;
-    } 
-    
+        right: 2px;
+        top: 2px;
+    }
+		#home_button1{
+        position: absolute;
+        width: 51px;
+        height: 55px;
+        left: 0px;
+        top: 0px;
+    }
+		#home_button2{
+        position: absolute;
+        width: 51px;
+        height: 55px;
+        left: 50px;
+        top: 30px;
+				font-family: cursive;
+				font-style: normal;
+				font-weight:bold;
+				font-size: 12px;
+				line-height: 18px;
+				text-align: center;
+				letter-spacing: 0.01em;
+				color: #BDDCDC;
+    }
     #my_book{
         position: absolute;
         height: 18px;
-        left: 120px;
+        left: 125px;
         top: 41px;
 
-        font-family: Noto Sans TC;
+        font-family:fantasy;
         font-style: normal;
-        font-weight: normal;
-        font-size: 30px;
+        font-weight:bold;
+        font-size: 45px;
         line-height: 18px;
         text-align: center;
         letter-spacing: 0.01em;
@@ -57,7 +78,7 @@
         font-size: 20px;
         line-height: 18px;
         text-align: center;
-        color: #686262;
+        color: #002D7C;
     }
 
     #April_2021{
@@ -72,7 +93,7 @@
         font-size: 20px;
         line-height: 18px;
         text-align: center;
-        color: #686262;
+        color: #002D7C;
     }
 
     #May_2021{
@@ -87,7 +108,7 @@
         font-size: 20px;
         line-height: 18px;
         text-align: center;
-        color: #686262;        
+        color: #002D7C;
     }
 
     #recent_img{
@@ -101,7 +122,7 @@
         margin: 0 auto;
     }
 
-    #frame_12{  
+    #frame_12{
         position: absolute;
         width: 322px;
         height: 160px;
@@ -127,7 +148,7 @@
         top: 0px;
         filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     }
-    
+
     #three{
         position: absolute;
         width: 143px;
@@ -172,6 +193,9 @@
         top: 0px;
         filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     }
+		.button1{
+
+		}
 	</style>
 
 </head>
@@ -181,19 +205,23 @@
 
 <body>
     <div class = "iphone_11_pro">
-        <img id = "home_button" src=https://s3-alpha-sig.figma.com/img/91ab/41f0/fef584949a60d5216513c2192326c837?Expires=1627257600&Signature=KQeaWzFK-3lClF5ALPF7SilAHcQNU6qUrVJSq48gkaU1oyVuSyzbKeKhtHe~lkjlr70HLYs6kdm6PzH7JQ5jA~Nxig0Jp1xE5NWlhakZT67MI7kD-CNAxse2ewcgNT7WUGvvlxjvwzP3tlEqQXtSIMFwt9vsNumKsJ3Kodyh~f4niEVy7yt5OAo97ODZ0b~S1XMXv5p3TbPE1z5wfaKQ~XwR~PcDlJW8D8nAqk1Ow6cu-jA9Vthv-JFY7VPv0F4tNZJ5h2ScjRa0zpXlxFxCUoTHlBPlKJGTd2udiKZo72A5gh1m0FH7blZB0dB6IJl3ndPpYdE6OuaDCp3yCS4E6A__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA>
-        <span id = "my_book">My Book</span>
+			<img id = "home_button1" src=https://sg-res.9appsinstall.com/sg/res/jpg/14/1a/5975e24788e8f5f660509cd25e99-0sp.jpg?x-oss-process=style/mq200>
+				<a href="http://localhost:8000/coloring/welcome/">
+				<img id = "home_button"  src=https://s3-alpha-sig.figma.com/img/91ab/41f0/fef584949a60d5216513c2192326c837?Expires=1627257600&Signature=KQeaWzFK-3lClF5ALPF7SilAHcQNU6qUrVJSq48gkaU1oyVuSyzbKeKhtHe~lkjlr70HLYs6kdm6PzH7JQ5jA~Nxig0Jp1xE5NWlhakZT67MI7kD-CNAxse2ewcgNT7WUGvvlxjvwzP3tlEqQXtSIMFwt9vsNumKsJ3Kodyh~f4niEVy7yt5OAo97ODZ0b~S1XMXv5p3TbPE1z5wfaKQ~XwR~PcDlJW8D8nAqk1Ow6cu-jA9Vthv-JFY7VPv0F4tNZJ5h2ScjRa0zpXlxFxCUoTHlBPlKJGTd2udiKZo72A5gh1m0FH7blZB0dB6IJl3ndPpYdE6OuaDCp3yCS4E6A__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA>
+			</a>
+				<span id = "my_book">Gallery</span>
+				<span id = "home_button2">Colorelax</span>
         <p id ="recent_text">Recent> </p>
 
         <img id = "recent_img" src= https://s3-alpha-sig.figma.com/img/9457/192e/b16dc10a2b429aeae3f45b339b5a3e2e?Expires=1627257600&Signature=c3nD8BCRyhQGFY96K2fhbyjCN-tY4hsBjJhYPDr-LJhj~UOOpqhwLr7ZDgoTaRUylJdrxR6due3p2C7JMLCDFJqqmAM4vt8kxZ-mcb9PPsn2BK8k3Tr~L1Qp~aikaLMmEsx8dN~y2Vo8cCoYSvZ0FnxgaZSnudlSs3pJxLcYLh~OdKTWaFMsIFMjf1hj4QK2rPYv5O4eoRSluYQLXp41gexQoL~HhL9IcJZO21Pb8D8oYmQa5~ALlshOjiIo8oCjDjf84JABKVDcHTJeSLTTW3gq6BjA2uENTi0mV5o2ybfIVcee~awRqKSt9rmtD-SGf0W85JG2l1gU8SQo0L~DMw__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA>
         <p id ="April_2021">April 2021> </p>
         <p id ="May_2021">May 2021> </p>
 
-        <div id = "frame_12"> 
+        <div id = "frame_12">
             <img id = "one" src = https://s3-alpha-sig.figma.com/img/18de/01a1/22a1aeb92dec0dd6fa75263abbf2f307?Expires=1627257600&Signature=OQ5OPrGpMzgL5t8HB19O6w4W1TZKlg0C9oQx6v2nC9fOTprxGzVTf2WrVCjg0nvSCsTMvV5RcDPyvr41qLeCjw-Iesu0Nar09sWmDd0rtNkqTZYHOAbSr32XE-PuZ3dKtY7x7bFIxKU9O9BPy4T3tGVDl7EA6SXkGoX5aJhLoJjqKTdteR77G0frDj4NbWIT7H-yzTK5Kf1xQ8Dbb-AVBnIPtJl9QObt0NHILCiWUsyXHl~QZX4JIV7B236QM0r~u59we4zKuqZ7qx8MYdMdB91ePBHWe8nfNZHQBHGdmP4KNWbsbHPWI5a2wBzxF5bsEVowUTzI601wbIE-fDrc5w__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA>
             <img id = "two" src = https://s3-alpha-sig.figma.com/img/b1de/0b9b/5a0d7b4efe6310ecbf30c4f98b94f289?Expires=1627257600&Signature=Jg7kLwxpxF5W7xQ6J-bmUjNTiWFBgwo1UTtR84Bj~~KDOtGfaFQZwTfw3P-IZZv3ofpRU-ydRfxY4D5PKWndpvjn5doVlDD-xLbBwhaOikRvCjhUvBHaFV-CBKGS37V-ZZVD5v1Day1a-seBwh5F8PRY-uulkw844q3uYBBRJNPt0zkmlE9YsXFxAhgCltjYL3d9jETYrU4H6iuw-aRztd2BN4-bUmZ4-naaLkZ7lYXZSCSfz5kJ807LUBX2gcMeuVOyrYLSC0mh31~TDbrmYWYWjai9GFD~X4k3~OwGYAmC61O4Gre0LtyheGh9EqHRPG~qOLkxojcAIAQozcCivQ__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA>
             <img id = "three" src = https://s3-alpha-sig.figma.com/img/f900/eb07/cc0284b75d1178ac05ccca729c4e473b?Expires=1627257600&Signature=Or-08wXriV67AclypajXf48PFvLrsaw0tlvzF548cZAnrvi7QcoUVhar~ETjTFDI~VPmDYIWORHt5zcS3FoYyR5bAwiy7wfgbwVp07NQ43Ph0vAzNcYdiqzUNgl1ofKLUFqw1RVbAP1Hibssaf71TgpnY64tlKvbwJIkLCuOx0ohO~0oBjjLsRGZrdcrpYhaTMFYGvmso0WXztOa3lUwcYzQc9HY7m91vectB~84iQAVf0l-Mm030-IwkWmhxdQ8x4AlPQs1PA1aKhqvoG2svfyqJisazC24ysJX2-cH3l9ej8Tclyom2vuEtJczIS96qQZdE~XMiDpUla4eaOxGUQ__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA>
-        </div> 
+        </div>
 
         <div id = "frame_13">
             <img id = "four" src = https://s3-alpha-sig.figma.com/img/d809/efe6/44a091e97490b97ecb9b61ebac5cd3b6?Expires=1627257600&Signature=XqiuOOEmceC65RepSJpTY8Dj0HiwC6vryLi8TXQoXW3U1b-ithoxVXZIDXY-ANk5VwAIvAc742iluPMgQ18fvqQnODjl79FWoSIUGFGDvnlR1HPlMFqe~OEDaYlMjNYzHTtQSaGxTVMUBC0xbAKZQELk91x6U1XGtmM7B3JU1ivic11k3bWdyB3thsoZkOrZoyNBKbHyZtnpDdS36wK3GCY36TH6wEvAobEYBVMPihfBFpFjywrOofKwJtocwKuiSdyXdhebqB166XBWP8CRqXafRL7GKKkxwxpoRb-Ug~5stoOZMYqblvrPcGK90jIyD1Jdv2nRKPlZR6jTwRzOVw__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA>

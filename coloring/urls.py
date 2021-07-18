@@ -7,6 +7,8 @@ urlpatterns = [
     path('gallery/', views.gallery, name='gallery'),
     path('triangles/', views.triangles, name="triangles"),
     path('mandala_simple/', views.mandala_simple, name="mandala_simple"),
-    path('new_interaction/', views.new_interaction, name='new_interaction')
+    path('new_interaction/', views.new_interaction, name='new_interaction'),
+    path('welcome/', views.welcome, name="welcome"),
+    path('start/', views.start, name="start"),
+    path('mandalas/', views.mandalas, name="mandalas")
 ]
-

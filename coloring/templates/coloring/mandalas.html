@@ -1,0 +1,225 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  	<title>P3 Coloring</title>
+
+	<script type="text/javascript" src="{% static 'coloring/vendors/jquery/jquery-3.3.1.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'coloring/vendors/paper/paper-full.min.js' %}"></script>
+
+	<style type="text/css">
+	.iphone_11_pro{
+        position: relative;
+        width: 375px;
+        height: 812px;
+        top: 200px;
+        margin: auto;
+    }
+
+    #home_button{
+        position: absolute;
+        width: 51px;
+        height: 55px;
+        right: 2px;
+        top: 2px;
+    }
+		#home_button1{
+        position: absolute;
+        width: 51px;
+        height: 55px;
+        left: 0px;
+        top: 0px;
+    }
+		#home_button2{
+        position: absolute;
+        width: 51px;
+        height: 55px;
+        left: 50px;
+        top: 30px;
+				font-family: cursive;
+				font-style: normal;
+				font-weight:bold;
+				font-size: 12px;
+				line-height: 18px;
+				text-align: center;
+				letter-spacing: 0.01em;
+				color: #BDDCDC;
+    }
+    #my_book{
+        position: absolute;
+        height: 18px;
+        left: 125px;
+        top: 41px;
+
+        font-family:fantasy;
+        font-style: normal;
+        font-weight:bold;
+        font-size: 45px;
+        line-height: 18px;
+        text-align: center;
+        letter-spacing: 0.01em;
+        color: #000000;
+    }
+
+
+    #recent_text{
+        position: absolute;
+        width: 300px;
+        height: 50px;
+        right: 45px;
+        top: 50px;
+
+        font-family:monospace;
+        font-style: italic;
+        font-weight:bold;
+        font-size: 50px;
+        line-height: 18px;
+        text-align: center;
+        text-decoration: inherit;
+        color: #646569;
+    }
+
+    #text1{
+        position: absolute;
+        width: 250px;
+        height: 18px;
+        right: 140px;
+        top: 330px;
+        font-family: Noto Sans SC;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 20px;
+        line-height: 18px;
+        text-align: center;
+        color: #002D7C;
+    }
+    #text2{
+        position: absolute;
+        width: 250px;
+        height: 18px;
+        left: 120px;
+        top: 330px;
+        font-family: Noto Sans SC;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 20px;
+        line-height: 18px;
+        text-align: center;
+        color: #002D7C;
+    }
+    #text3{
+        position: absolute;
+        width: 250px;
+        height: 18px;
+        left: 290px;
+        top: 330px;
+        font-family: Noto Sans SC;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 20px;
+        line-height: 18px;
+        text-align: center;
+        color: #002D7C;
+    }
+    #text4{
+        position: absolute;
+        width: 250px;
+        height: 18px;
+        right: 140px;
+        top: 610px;
+        font-family: Noto Sans SC;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 20px;
+        line-height: 18px;
+        text-align: center;
+        color: #002D7C;
+    }
+
+
+    #recent_img{
+        position: absolute;
+        width: 200px;
+        height: auto;
+        top: 200px;
+        left: 0px;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+        display: block;
+        margin: 0 auto;
+        border-style: groove;
+        border-width: 7px;
+        border-color: coral;
+    }
+    #recent_img2{
+        position: absolute;
+        width: 200px;
+        height: auto;
+        top: 200px;
+        left: 250px;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+        display: block;
+        margin: 0 auto;
+        border-style: groove;
+border-width: 7px;
+border-color: coral;
+    }
+    #recent_img3{
+        position: absolute;
+        width: 200px;
+        height: auto;
+        top: 200px;
+        left: 500px;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+        display: block;
+        margin: 0 auto;
+        border-style: groove;
+border-width: 7px;
+border-color: coral;
+    }
+
+
+    #frame_12{
+        position: absolute;
+        width: 322px;
+        height: 700px;
+        left: 34px;
+        top: 0px;
+        overflow-x: scroll;
+    }
+
+
+	</style>
+
+</head>
+
+
+
+
+<body>
+    <div class = "iphone_11_pro">
+			<img id = "home_button1" src=https://sg-res.9appsinstall.com/sg/res/jpg/14/1a/5975e24788e8f5f660509cd25e99-0sp.jpg?x-oss-process=style/mq200>
+				<a href="http://localhost:8000/coloring/start/">
+				<img id = "home_button"  src=https://s3-alpha-sig.figma.com/img/91ab/41f0/fef584949a60d5216513c2192326c837?Expires=1627257600&Signature=KQeaWzFK-3lClF5ALPF7SilAHcQNU6qUrVJSq48gkaU1oyVuSyzbKeKhtHe~lkjlr70HLYs6kdm6PzH7JQ5jA~Nxig0Jp1xE5NWlhakZT67MI7kD-CNAxse2ewcgNT7WUGvvlxjvwzP3tlEqQXtSIMFwt9vsNumKsJ3Kodyh~f4niEVy7yt5OAo97ODZ0b~S1XMXv5p3TbPE1z5wfaKQ~XwR~PcDlJW8D8nAqk1Ow6cu-jA9Vthv-JFY7VPv0F4tNZJ5h2ScjRa0zpXlxFxCUoTHlBPlKJGTd2udiKZo72A5gh1m0FH7blZB0dB6IJl3ndPpYdE6OuaDCp3yCS4E6A__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA>
+			</a>
+				<span id = "home_button2">Colorelax</span>
+        <p id ="recent_text">Mandalas </p>
+        <div id = "frame_12">
+        <a href="http://localhost:8000/coloring/new_interaction/">
+        <img id = "recent_img" src= '/static/coloring/images/mandala-freepik.svg'>
+      </a>
+      <a href="http://localhost:8000/coloring/mandala_simple/">
+        <img id = "recent_img2" src= '/static/coloring/images/mandala-freepik-simple.svg'>
+        </a>
+        <a href="http://localhost:8000/coloring/triangles/">
+        <img id = "recent_img3" src = '/static/coloring/images/triangles.svg'>
+        </a>
+
+
+        </div>
+
+    </div>
+
+</body>
+</html>
